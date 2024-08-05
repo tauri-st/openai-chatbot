@@ -22,4 +22,7 @@ response = client.chat.completions.create(
     messages = messages
 )
 
-print(response)
+# Extract tje message content
+response_for_user = response.choices[0].message.content
+
+print(response_for_user)
