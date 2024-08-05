@@ -14,9 +14,9 @@ def q_and_a (model, messages):
     )
 
     # Extract tje message content
-    response_for_user = response.choices[0].message.content
+    response_content = response.choices[0].message.content
 
-    return response_for_user
+    return response_content
 
 # ask user to input text. This script is run via the command line 
 # for now so the input() function is required
@@ -29,4 +29,6 @@ messages = [
     {"role": "user", "content": user_input}
 ]
 
-print(q_and_a(user_input))
+response_for_user = q_and_a(model, messages)
+
+print("\n" + response_for_user + "\n")
