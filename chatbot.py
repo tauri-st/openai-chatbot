@@ -27,6 +27,6 @@ def ask_me_a_question (user_input):
     # Extract tje message content
     response_for_user = response.choices[0].message.content
 
-    print(response_for_user)
+    return response_for_user
 
 print(ask_me_a_question(user_input))
