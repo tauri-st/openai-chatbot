@@ -4,18 +4,7 @@ from openai import OpenAI
 # OpenAI() will automatically pull the key from the system variable
 client = OpenAI()
 
-# ask user to input text. This script is run via the command line 
-# for now so the input() function is required
-user_input = input("\nAsk me something...\n\n")
-
-model = "gpt-3.5-turbo"
-
-messages = [
-    {"role": "system", "content": "You are an assistant that always answers in the form of a poem."},
-    {"role": "user", "content": user_input}
-]
-
-def q_and_a (user_input):
+def q_and_a (model, messages):
 
     # Chat Completions API, formatted as an object where model and
     # messages are required
@@ -28,5 +17,16 @@ def q_and_a (user_input):
     response_for_user = response.choices[0].message.content
 
     return response_for_user
+
+# ask user to input text. This script is run via the command line 
+# for now so the input() function is required
+user_input = input("\nAsk me something...\n\n")
+
+model = "gpt-3.5-turbo"
+
+messages = [
+    {"role": "system", "content": "You are an assistant that always answers in the form of a poem."},
+    {"role": "user", "content": user_input}
+]
 
 print(q_and_a(user_input))
