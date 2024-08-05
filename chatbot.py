@@ -8,21 +8,25 @@ client = OpenAI()
 # for now so the input() function is required
 user_input = input("\nAsk me something...\n\n")
 
-model = "gpt-3.5-turbo"
+def ask_me_a_question (user_input):
 
-messages = [
-    {"role": "system", "content": "You are an assistant that always answers in the form of a poem."},
-    {"role": "user", "content": user_input}
-]
+    model = "gpt-3.5-turbo"
 
-# Chat Completions API, formatted as an object where model and
-# messages are required
-response = client.chat.completions.create(
-    model = model,
-    messages = messages
-)
+    messages = [
+        {"role": "system", "content": "You are an assistant that always answers in the form of a poem."},
+        {"role": "user", "content": user_input}
+    ]
 
-# Extract tje message content
-response_for_user = response.choices[0].message.content
+    # Chat Completions API, formatted as an object where model and
+    # messages are required
+    response = client.chat.completions.create(
+        model = model,
+        messages = messages
+    )
 
-print(response_for_user)
+    # Extract tje message content
+    response_for_user = response.choices[0].message.content
+
+    print(response_for_user)
+
+print(ask_me_a_question(user_input))
