@@ -15,7 +15,7 @@ messages = [
     {"role": "user", "content": user_input}
 ]
 
-def ask_me_a_question (user_input):
+def q_and_a (user_input):
 
     # Chat Completions API, formatted as an object where model and
     # messages are required
@@ -29,4 +29,4 @@ def ask_me_a_question (user_input):
 
     return response_for_user
 
-print(ask_me_a_question(user_input))
+print(q_and_a(user_input))
