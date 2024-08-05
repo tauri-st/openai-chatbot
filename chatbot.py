@@ -18,5 +18,6 @@ messages = [
 # Chat Completions API, formatted as an object where model and
 # messages are required
 response = client.chat.completions.create(
-    
+    model = model,
+    messages = messages
 )
