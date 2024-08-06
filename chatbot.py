@@ -25,7 +25,7 @@ user_input = input("\nAsk me something...\n\n")
 model = "gpt-3.5-turbo"
 
 messages = [
-    {"role": "system", "content": "You are an assistant that always answers in the form of a poem."},
+    {"role": "system", "content": "You are an assistant that answers as if you’re a detective solving a mystery."},
     {"role": "user", "content": user_input}
 ]
 
