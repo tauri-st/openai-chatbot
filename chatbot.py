@@ -10,7 +10,7 @@ def set_user_input_category (user_input) :
     for keyword in question_keywords:
         if keyword in user_input.lower():
             return "question"
-        return "statement"
+    return "statement"
 
 def q_and_a (model, messages):
 
