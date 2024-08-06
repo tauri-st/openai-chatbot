@@ -39,4 +39,5 @@ messages = [
 
 response_for_user = q_and_a(model, messages)
 
-print("\n" + response_for_user + "\n")
+if set_user_input_category(user_input) == "question":
+    response_for_user = "Good question! " + response_for_user
