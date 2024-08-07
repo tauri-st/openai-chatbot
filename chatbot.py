@@ -63,6 +63,13 @@ messages = [
     {"role": "user", "content": user_input}
 ]
 
+plot_prompt = f"""
+
+Summarize the text below in no more than 100 words.
+
+{plot_description}
+"""
+
 response_for_user = q_and_a(model, messages)
 
 if set_user_input_category(user_input) == "question":
