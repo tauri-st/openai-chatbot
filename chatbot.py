@@ -110,6 +110,7 @@ for sentiment in book_reviews:
         response_content = response.choices[0].message.content
 
         return response_content
+    book_reviews_with_sentiments.append(response_content)
 
 book_summary = get_api_chat_response_message(model, messages)
 
