@@ -12,7 +12,7 @@ def set_user_input_category (user_input) :
             return "question"
     return "statement"
 
-def q_and_a (model, messages):
+def get_api_chat_response_message (model, messages):
 
     # Chat Completions API, formatted as an object where model and
     # messages are required
@@ -99,7 +99,7 @@ messages = [
     {"role": "user", "content": plot_prompt}
 ]
 
-book_summary = q_and_a(model, messages)
+book_summary = get_api_chat_response_message(model, messages)
 
 #if set_user_input_category(user_input) == "question":
     #response_for_user = "Good question! " + response_for_user
