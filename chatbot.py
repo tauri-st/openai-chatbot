@@ -103,13 +103,13 @@ for sentiment in book_reviews:
 
     # Chat Completions API, formatted as an object where model and
     # messages are required
-    response = client.chat.completions.create(
-        model = model,
-        messages = [
-            {"role": "system", "content": " a digital marketer working at a small publishing company"},
-            {"role": "user", "content": reviews_prompt}
-        ]
-    )
+        response = client.chat.completions.create(
+            model = model,
+            messages = [
+                {"role": "system", "content": " a digital marketer working at a small publishing company"},
+                {"role": "user", "content": reviews_prompt}
+            ]
+        )
 
     # Extract tje message content
     response_content = response.choices[0].message.content
