@@ -100,14 +100,15 @@ for sentiment in book_reviews:
 
     <{book_reviews}>
     """
-    review_messages = []
+    #Create new variable for messages parameter for book reviews
+    review_messages = [
+        {"role": "system", "content": " a digital marketer working at a small publishing company"},
+        {"role": "user", "content": reviews_prompt}
+    ]
     def get_api_chat_response_message (model, messages):
         response = client.chat.completions.create(
             model = model,
-            messages = [
-                {"role": "system", "content": " a digital marketer working at a small publishing company"},
-                {"role": "user", "content": reviews_prompt}
-            ]
+            messages = review_messages
         )
         response_content = response.choices[0].message.content
 
