@@ -118,6 +118,12 @@ for review in book_reviews:
 
 # *** USE THE SUMMARY AND SENTIMENT ANALYSIS TO GENERATE EMAIL CONTENT ***
 
+# TODO: Create a new prompt to ask the model to generate an email, using your book_summary and book_reviews_with_sentiments data
+    # TODO: You’ll need to loop through book_reviews_with_sentiments to get just the positive reviews!
+# TODO: Make your API call and print() it so you can run your script and see the results — how does it look?
+# TODO: Adjust your prompt as needed to get the email content you want — remember, we want an exciting email that makes people want to run out and buy the book!
+# TODO: Did you ask for an email subject line? You could try asking for 10 different options for email subject lines and see what you get
+
 #if set_user_input_category(user_input) == "question":
     #response_for_user = "Good question! " + response_for_user
 
