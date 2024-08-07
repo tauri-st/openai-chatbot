@@ -63,7 +63,7 @@ plot_prompt = f"""
 Summarize the text below, in between < and >, in no more than 100 words.
 
 <{plot_description}>
-Write this as one paragraph.
+Write this as one paragraph and make the summarization exciting. This text will be used to promote the launch of a new book."
 """
 
 messages = [
