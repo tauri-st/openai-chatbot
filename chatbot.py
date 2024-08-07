@@ -94,7 +94,7 @@ book_reviews = {
 
 book_reviews_with_sentiments = []
 
-for sentiment in book_reviews:
+for review in book_reviews:
     reviews_prompt = f"""
     Determine the sentiment of the current book review in the dictionary blow, in between < and >, as a single word, positive or negative.
 
