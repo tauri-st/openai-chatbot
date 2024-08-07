@@ -34,6 +34,8 @@ model = "gpt-3.5-turbo"
 
 book_title = "The Forgotten House"
 
+# ***SUMMARIZE THE PLOT DESCRIPTION***
+
 plot_description = """In the heart of the bustling metropolis of Astoria, the old Henderson House stands as a
 silent sentinel, its imposing facade a stark contrast to the modern skyscrapers that
 surround it. Once a grand mansion, it now sits abandoned, its windows broken, its
@@ -75,6 +77,8 @@ messages = [
 
 book_summary = get_api_chat_response_message(model, messages)
 
+# ***INFER CUSTOMER SENTIMENT FROM PRE-RELEASE BOOK REVIEWS***
+
 book_reviews = {
     "I read The Forgotten House and found it to be average. The writing was decent, and the plot was somewhat engaging, but it didn't leave a lasting impression on me.",
     "I found The Forgotten House to be predictable and lacking in originality. The plot felt formulaic, and the characters were one-dimensional. Overall, a disappointing read.",
@@ -111,6 +115,8 @@ for review in book_reviews:
         "review": review,
         "sentiment": sentiment
     })
+
+# *** USE THE SUMMARY AND SENTIMENT ANALYSIS TO GENERATE EMAIL CONTENT ***
 
 #if set_user_input_category(user_input) == "question":
     #response_for_user = "Good question! " + response_for_user
