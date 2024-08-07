@@ -105,14 +105,8 @@ for review in book_reviews:
         {"role": "system", "content": "You are a digital marketer working at a small publishing company"},
         {"role": "user", "content": reviews_prompt}
     ]
-    def get_api_chat_response_message (model, review_messages):
-        response = client.chat.completions.create(
-            model = model,
-            messages = review_messages
-        )
-        response_content = response.choices[0].message.content
+    sentiment =  get_api_chat_response_message (model, review_messages)
 
-        return response_content
     book_reviews_with_sentiments.append(response_content)
 
 #if set_user_input_category(user_input) == "question":
