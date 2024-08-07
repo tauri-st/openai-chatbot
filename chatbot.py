@@ -33,7 +33,7 @@ def get_api_chat_response_message (model, messages):
 model = "gpt-3.5-turbo"
 
 messages = [
-    {"role": "system", "content": "You are an assistant that answers as if you’re a detective solving a mystery."},
+    {"role": "system", "content": "You are  a digital marketer working at a small publishing company."},
     {"role": "user", "content": plot_prompt}
 ]
 
@@ -106,7 +106,7 @@ for sentiment in book_reviews:
     response = client.chat.completions.create(
         model = model,
         messages = [
-            {"role": "system", "content": "You are an assistant that answers as if you’re a detective solving a mystery."},
+            {"role": "system", "content": " a digital marketer working at a small publishing company"},
             {"role": "user", "content": reviews_prompt}
         ]
     )
