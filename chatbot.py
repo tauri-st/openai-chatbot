@@ -98,6 +98,23 @@ for sentiment in book_reviews:
 
     <{book_reviews}>
     """
+    review_messages = []
+    def get_api_chat_response_message (model, messages):
+
+    # Chat Completions API, formatted as an object where model and
+    # messages are required
+    response = client.chat.completions.create(
+        model = model,
+        messages = [
+            {"role": "system", "content": "You are an assistant that answers as if you’re a detective solving a mystery."},
+            {"role": "user", "content": reviews_prompt}
+        ]
+    )
+
+    # Extract tje message content
+    response_content = response.choices[0].message.content
+
+    return response_content
 
 book_summary = get_api_chat_response_message(model, messages)
 
