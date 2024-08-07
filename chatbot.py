@@ -69,7 +69,7 @@ Refer to the book title {book_title} within the summary. Write this as one parag
 """
 
 messages = [
-    {"role": "system", "content": "You are  a digital marketer working at a small publishing company."},
+    {"role": "system", "content": "You are a digital marketer working at a small publishing company."},
     {"role": "user", "content": plot_prompt}
 ]
 
@@ -102,7 +102,7 @@ for sentiment in book_reviews:
     """
     #Create new variable for messages parameter for book reviews
     review_messages = [
-        {"role": "system", "content": " a digital marketer working at a small publishing company"},
+        {"role": "system", "content": "You are a digital marketer working at a small publishing company"},
         {"role": "user", "content": reviews_prompt}
     ]
     def get_api_chat_response_message (model, messages):
