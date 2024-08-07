@@ -65,9 +65,9 @@ messages = [
 
 plot_prompt = f"""
 
-Summarize the text below in no more than 100 words.
+Summarize the text below, in between < and >, in no more than 100 words.
 
-{plot_description}
+<{plot_description}>
 """
 
 response_for_user = q_and_a(model, messages)
