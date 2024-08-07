@@ -32,6 +32,8 @@ def q_and_a (model, messages):
 
 model = "gpt-3.5-turbo"
 
+book_title = "The Forgotten House"
+
 plot_description = """In the heart of the bustling metropolis of Astoria, the old Henderson House stands as a
 silent sentinel, its imposing facade a stark contrast to the modern skyscrapers that
 surround it. Once a grand mansion, it now sits abandoned, its windows broken, its
@@ -63,7 +65,7 @@ plot_prompt = f"""
 Summarize the text below, in between < and >, in no more than 100 words.
 
 <{plot_description}>
-Write this as one paragraph and make the summarization exciting. This text will be used to promote the launch of a new book."
+Refer to the book title {book_title} within the summary. Write this as one paragraph and make the summarization exciting. This text will be used to promote the launch of a new book."
 """
 
 messages = [
@@ -71,9 +73,9 @@ messages = [
     {"role": "user", "content": plot_prompt}
 ]
 
-response_for_user = q_and_a(model, messages)
+book_summary = q_and_a(model, messages)
 
 #if set_user_input_category(user_input) == "question":
     #response_for_user = "Good question! " + response_for_user
 
-print("\n" + response_for_user + "\n")
+print("\n" + book_summary + "\n")
