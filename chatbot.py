@@ -107,11 +107,9 @@ for sentiment in book_reviews:
                 {"role": "user", "content": reviews_prompt}
             ]
         )
+        response_content = response.choices[0].message.content
 
-    # Extract tje message content
-    response_content = response.choices[0].message.content
-
-    return response_content
+        return response_content
 
 book_summary = get_api_chat_response_message(model, messages)
 
