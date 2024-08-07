@@ -77,6 +77,15 @@ book_reviews = {
     "I finished The Forgotten House and felt indifferent about it. The story was fine, but it didn't leave a lasting impression on me. It's a decent read if you're looking for something light."
 }
 
+book_reviews_with_sentiments = []
+
+for sentiment in book_reviews:
+    reviews_prompt = f"""
+    Determine the sentiment of the current book review in the dictionary blow, in between < and >, as a single word, positive or negative.
+
+    <{book_reviews}>
+    """
+
 plot_prompt = f"""
 
 Summarize the text below, in between < and >, in no more than 100 words.
