@@ -118,3 +118,5 @@ book_summary = get_api_chat_response_message(model, messages)
     #response_for_user = "Good question! " + response_for_user
 
 print("\n" + book_summary + "\n")
+
+print("\n" + book_reviews_with_sentiments + "\n")
