@@ -32,6 +32,11 @@ def get_api_chat_response_message (model, messages):
 
 model = "gpt-3.5-turbo"
 
+messages = [
+    {"role": "system", "content": "You are an assistant that answers as if you’re a detective solving a mystery."},
+    {"role": "user", "content": plot_prompt}
+]
+
 book_title = "The Forgotten House"
 
 plot_description = """In the heart of the bustling metropolis of Astoria, the old Henderson House stands as a
@@ -93,11 +98,6 @@ Summarize the text below, in between < and >, in no more than 100 words.
 <{plot_description}>
 Refer to the book title {book_title} within the summary. Write this as one paragraph and make the summarization exciting. This text will be used to promote the launch of a new book."
 """
-
-messages = [
-    {"role": "system", "content": "You are an assistant that answers as if you’re a detective solving a mystery."},
-    {"role": "user", "content": plot_prompt}
-]
 
 book_summary = get_api_chat_response_message(model, messages)
 
