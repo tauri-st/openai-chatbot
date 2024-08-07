@@ -28,7 +28,7 @@ def q_and_a (model, messages):
 
 # ask user to input text. This script is run via the command line 
 # for now so the input() function is required
-user_input = input("\nAsk me something...\n\n")
+# user_input = input("\nAsk me something...\n\n")
 
 model = "gpt-3.5-turbo"
 
@@ -60,7 +60,7 @@ Henderson House and escape its haunting legacy."""
 
 messages = [
     {"role": "system", "content": "You are an assistant that answers as if you’re a detective solving a mystery."},
-    {"role": "user", "content": user_input}
+    {"role": "user", "content": plot_prompt}
 ]
 
 plot_prompt = f"""
