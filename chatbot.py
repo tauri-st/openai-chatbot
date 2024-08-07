@@ -4,13 +4,13 @@ from openai import OpenAI
 # OpenAI() will automatically pull the key from the system variable
 client = OpenAI()
 
-def set_user_input_category (user_input) :
+#def set_user_input_category (user_input) :
     #check if any text in input indicates there is a question
-    question_keywords = ["who", "what", "when", "where", "why", "how", "?"]
-    for keyword in question_keywords:
-        if keyword in user_input.lower():
-            return "question"
-    return "statement"
+    #question_keywords = ["who", "what", "when", "where", "why", "how", "?"]
+    #for keyword in question_keywords:
+        #if keyword in user_input.lower():
+            #return "question"
+    #return "statement"
 
 def get_api_chat_response_message (model, messages):
 
