@@ -117,4 +117,4 @@ for review in book_reviews:
 
 print("\n" + book_summary + "\n")
 
-print("\n" + book_reviews_with_sentiments + "\n")
+print(book_reviews_with_sentiments)
