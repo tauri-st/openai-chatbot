@@ -58,11 +58,6 @@ than they ever imagined. But with each step closer to the truth, they also draw 
 danger, and Mia must confront her own fears if she is to uncover the secrets of the
 Henderson House and escape its haunting legacy."""
 
-messages = [
-    {"role": "system", "content": "You are an assistant that answers as if you’re a detective solving a mystery."},
-    {"role": "user", "content": plot_prompt}
-]
-
 plot_prompt = f"""
 
 Summarize the text below, in between < and >, in no more than 100 words.
@@ -70,6 +65,11 @@ Summarize the text below, in between < and >, in no more than 100 words.
 <{plot_description}>
 Write this as one paragraph.
 """
+
+messages = [
+    {"role": "system", "content": "You are an assistant that answers as if you’re a detective solving a mystery."},
+    {"role": "user", "content": plot_prompt}
+]
 
 response_for_user = q_and_a(model, messages)
 
