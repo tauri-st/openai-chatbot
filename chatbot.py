@@ -132,7 +132,7 @@ Generate an email using {book_summary} and {book_reviews_with_sentiments} data
 """
 # TODO: Make your API call and print() it so you can run your script and see the results — how does it look?
 email_messages = [
-        {"role": "system", "content": "You are a digital marketer working at a small publishing company"},
+        {"role": "system", "content": "You are a friendly Youtuber making book recommendations"},
         {"role": "user", "content": email_prompt}
     ]
 marketing_email =  get_api_chat_response_message (model, email_messages)
