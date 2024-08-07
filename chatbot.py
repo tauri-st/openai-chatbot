@@ -32,11 +32,6 @@ def get_api_chat_response_message (model, messages):
 
 model = "gpt-3.5-turbo"
 
-messages = [
-    {"role": "system", "content": "You are  a digital marketer working at a small publishing company."},
-    {"role": "user", "content": plot_prompt}
-]
-
 book_title = "The Forgotten House"
 
 plot_description = """In the heart of the bustling metropolis of Astoria, the old Henderson House stands as a
@@ -65,6 +60,19 @@ than they ever imagined. But with each step closer to the truth, they also draw 
 danger, and Mia must confront her own fears if she is to uncover the secrets of the
 Henderson House and escape its haunting legacy."""
 
+plot_prompt = f"""
+
+Summarize the text below, in between < and >, in no more than 100 words.
+
+<{plot_description}>
+Refer to the book title {book_title} within the summary. Write this as one paragraph and make the summarization exciting. This text will be used to promote the launch of a new book."
+"""
+
+messages = [
+    {"role": "system", "content": "You are  a digital marketer working at a small publishing company."},
+    {"role": "user", "content": plot_prompt}
+]
+
 book_reviews = {
     "I read The Forgotten House and found it to be average. The writing was decent, and the plot was somewhat engaging, but it didn't leave a lasting impression on me.",
     "I found The Forgotten House to be predictable and lacking in originality. The plot felt formulaic, and the characters were one-dimensional. Overall, a disappointing read.",
@@ -81,14 +89,6 @@ book_reviews = {
     "The Forgotten House started off strong, but I found the middle portion of the book to be slow and repetitive. The resolution felt rushed and unsatisfying, leaving me wanting more.",
     "I finished The Forgotten House and felt indifferent about it. The story was fine, but it didn't leave a lasting impression on me. It's a decent read if you're looking for something light."
 }
-
-plot_prompt = f"""
-
-Summarize the text below, in between < and >, in no more than 100 words.
-
-<{plot_description}>
-Refer to the book title {book_title} within the summary. Write this as one paragraph and make the summarization exciting. This text will be used to promote the launch of a new book."
-"""
 
 book_reviews_with_sentiments = []
 
