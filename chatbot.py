@@ -73,6 +73,8 @@ messages = [
     {"role": "user", "content": plot_prompt}
 ]
 
+book_summary = get_api_chat_response_message(model, messages)
+
 book_reviews = {
     "I read The Forgotten House and found it to be average. The writing was decent, and the plot was somewhat engaging, but it didn't leave a lasting impression on me.",
     "I found The Forgotten House to be predictable and lacking in originality. The plot felt formulaic, and the characters were one-dimensional. Overall, a disappointing read.",
@@ -111,8 +113,6 @@ for sentiment in book_reviews:
 
         return response_content
     book_reviews_with_sentiments.append(response_content)
-
-book_summary = get_api_chat_response_message(model, messages)
 
 #if set_user_input_category(user_input) == "question":
     #response_for_user = "Good question! " + response_for_user
