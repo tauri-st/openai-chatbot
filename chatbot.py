@@ -105,7 +105,7 @@ for review in book_reviews:
         {"role": "system", "content": "You are a digital marketer working at a small publishing company"},
         {"role": "user", "content": reviews_prompt}
     ]
-    def get_api_chat_response_message (model, messages):
+    def get_api_chat_response_message (model, review_messages):
         response = client.chat.completions.create(
             model = model,
             messages = review_messages
