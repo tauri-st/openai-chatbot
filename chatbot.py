@@ -120,20 +120,28 @@ for review in book_reviews:
 
 # TODO: Create a new prompt to ask the model to generate an email, using your book_summary and book_reviews_with_sentiments data
     # TODO: You’ll need to loop through book_reviews_with_sentiments to get just the positive reviews!
-positive_reviews = []
-for review in book_reviews_with_sentiments:
-    if sentiment=="positive":
-        positive_reviews.append(review)
-email_messages_prompt = f"""
-Generate an email using {book_summary} and {positive_reviews} data
+
+#positive_reviews = book_reviews_with_sentiments.get("sentiment"["positive"])
+
+#for review in book_reviews_with_sentiments:
+    #if "sentiment"=="positive":
+        #positive_reviews.append(review)
+#print(positive_reviews)
+email_prompt = f"""
+Generate an email using {book_summary} and {book_reviews_with_sentiments} data
 """
 # TODO: Make your API call and print() it so you can run your script and see the results — how does it look?
+email_messages = [
+        {"role": "system", "content": "You are a digital marketer working at a small publishing company"},
+        {"role": "user", "content": email_prompt}
+    ]
+marketing_email =  get_api_chat_response_message (model, email_messages)
 # TODO: Adjust your prompt as needed to get the email content you want — remember, we want an exciting email that makes people want to run out and buy the book!
 # TODO: Did you ask for an email subject line? You could try asking for 10 different options for email subject lines and see what you get
 
 #if set_user_input_category(user_input) == "question":
     #response_for_user = "Good question! " + response_for_user
 
-print("\n" + book_summary + "\n")
+#print("\n" + book_summary + "\n")
 
-print(book_reviews_with_sentiments)
+#print(book_reviews_with_sentiments)
