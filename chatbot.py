@@ -71,9 +71,9 @@ messages = [
     {"role": "user", "content": plot_prompt}
 ]
 
-#response_for_user = q_and_a(model, messages)
+response_for_user = q_and_a(model, messages)
 
 #if set_user_input_category(user_input) == "question":
     #response_for_user = "Good question! " + response_for_user
 
-#print("\n" + response_for_user + "\n")
+print("\n" + response_for_user + "\n")
