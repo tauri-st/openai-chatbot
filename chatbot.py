@@ -107,7 +107,10 @@ for review in book_reviews:
     ]
     sentiment =  get_api_chat_response_message (model, review_messages)
 
-    book_reviews_with_sentiments.append(response_content)
+    book_reviews_with_sentiments.append({
+        "review": review,
+        "sentiment": sentiment
+    })
 
 #if set_user_input_category(user_input) == "question":
     #response_for_user = "Good question! " + response_for_user
