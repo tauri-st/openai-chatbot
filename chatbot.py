@@ -100,9 +100,6 @@ for sentiment in book_reviews:
     """
     review_messages = []
     def get_api_chat_response_message (model, messages):
-
-    # Chat Completions API, formatted as an object where model and
-    # messages are required
         response = client.chat.completions.create(
             model = model,
             messages = [
