@@ -82,6 +82,14 @@ book_reviews = {
     "I finished The Forgotten House and felt indifferent about it. The story was fine, but it didn't leave a lasting impression on me. It's a decent read if you're looking for something light."
 }
 
+plot_prompt = f"""
+
+Summarize the text below, in between < and >, in no more than 100 words.
+
+<{plot_description}>
+Refer to the book title {book_title} within the summary. Write this as one paragraph and make the summarization exciting. This text will be used to promote the launch of a new book."
+"""
+
 book_reviews_with_sentiments = []
 
 for sentiment in book_reviews:
@@ -90,14 +98,6 @@ for sentiment in book_reviews:
 
     <{book_reviews}>
     """
-
-plot_prompt = f"""
-
-Summarize the text below, in between < and >, in no more than 100 words.
-
-<{plot_description}>
-Refer to the book title {book_title} within the summary. Write this as one paragraph and make the summarization exciting. This text will be used to promote the launch of a new book."
-"""
 
 book_summary = get_api_chat_response_message(model, messages)
 
