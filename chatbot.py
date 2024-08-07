@@ -68,6 +68,7 @@ plot_prompt = f"""
 Summarize the text below, in between < and >, in no more than 100 words.
 
 <{plot_description}>
+Write this as one paragraph.
 """
 
 response_for_user = q_and_a(model, messages)
