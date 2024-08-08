@@ -83,26 +83,24 @@ book_reviews = {
     "I read The Forgotten House and found it to be average. The writing was decent, and the plot was somewhat engaging, but it didn't leave a lasting impression on me.",
     "I found The Forgotten House to be predictable and lacking in originality. The plot felt formulaic, and the characters were one-dimensional. Overall, a disappointing read.",
     "A thrilling tale that kept me on the edge of my seat! The author expertly weaves together mystery, suspense, and a touch of the supernatural. A must-read for fans of young adult fiction!",
-    "The writing style of this book didn't resonate with me. I found it to be overly descriptive, which slowed down the pacing of the story. The characters also felt clichéd and uninteresting.",
-    "I struggled to connect with the characters in this book. They felt flat and underdeveloped, which made it difficult to care about their fates. The plot, while intriguing, was ultimately let down by the lack of depth in the characters.",
-    "I couldn't put this book down! The characters are relatable, the plot is engaging, and the setting is beautifully described. A captivating read from start to finish!", 
-    "The Forgotten House was an okay read. The story was interesting enough to keep me turning the pages, but I didn't feel particularly invested in the characters or the outcome.",
-    "The Forgotten House is a hauntingly beautiful story that lingers long after the final page. The author's descriptive prose brings the city to life, while the mystery keeps you guessing until the end. Highly recommend!",
-    "An atmospheric masterpiece! The author's vivid descriptions make you feel like you're right there in the city, exploring its secrets alongside the characters. A captivating and immersive read!",
-    "While the premise of The Forgotten House was intriguing, I felt that the execution fell short. The story lacked depth and complexity, and the ending left me feeling unsatisfied. Overall, not a book I would recommend.",
-    "The Forgotten House was an alright book. The premise was intriguing, but the execution fell a bit flat for me. I think it could have been more engaging with stronger character development.",
-    "A gripping mystery with a supernatural twist! The characters are well-developed, the plot is fast-paced, and the setting is richly detailed. A definite must-read for fans of the genre!",
-    "The Forgotten House started off strong, but I found the middle portion of the book to be slow and repetitive. The resolution felt rushed and unsatisfying, leaving me wanting more.",
-    "I finished The Forgotten House and felt indifferent about it. The story was fine, but it didn't leave a lasting impression on me. It's a decent read if you're looking for something light."
+    #"The writing style of this book didn't resonate with me. I found it to be overly descriptive, which slowed down the pacing of the story. The characters also felt clichéd and uninteresting.",
+    #"I struggled to connect with the characters in this book. They felt flat and underdeveloped, which made it difficult to care about their fates. The plot, while intriguing, was ultimately let down by the lack of depth in the characters.",
+    #"I couldn't put this book down! The characters are relatable, the plot is engaging, and the setting is beautifully described. A captivating read from start to finish!", 
+    #"The Forgotten House was an okay read. The story was interesting enough to keep me turning the pages, but I didn't feel particularly invested in the characters or the outcome.",
+    #"The Forgotten House is a hauntingly beautiful story that lingers long after the final page. The author's descriptive prose brings the city to life, while the mystery keeps you guessing until the end. Highly recommend!",
+    #"An atmospheric masterpiece! The author's vivid descriptions make you feel like you're right there in the city, exploring its secrets alongside the characters. A captivating and immersive read!",
+    #"While the premise of The Forgotten House was intriguing, I felt that the execution fell short. The story lacked depth and complexity, and the ending left me feeling unsatisfied. Overall, not a book I would recommend.",
+    #"The Forgotten House was an alright book. The premise was intriguing, but the execution fell a bit flat for me. I think it could have been more engaging with stronger character development.",
+    #"A gripping mystery with a supernatural twist! The characters are well-developed, the plot is fast-paced, and the setting is richly detailed. A definite must-read for fans of the genre!",
+    #"The Forgotten House started off strong, but I found the middle portion of the book to be slow and repetitive. The resolution felt rushed and unsatisfying, leaving me wanting more.",
+    #"I finished The Forgotten House and felt indifferent about it. The story was fine, but it didn't leave a lasting impression on me. It's a decent read if you're looking for something light."
 }
 
 book_reviews_with_sentiments = []
 
 for review in book_reviews:
     reviews_prompt = f"""
-    Determine the sentiment of the current book review in the dictionary blow, in between < and >, as a single word, positive or negative.
-
-    <{book_reviews}>
+    Give me the sentiment of {review} as one word, "positive" or "negative".
     """
     #Create new variable for messages parameter for book reviews
     review_messages = [
@@ -127,15 +125,36 @@ for review in book_reviews:
     #if "sentiment"=="positive":
         #positive_reviews.append(review)
 #print(positive_reviews)
-email_prompt = f"""
-Generate an email using {book_summary} and {book_reviews_with_sentiments} data
-"""
+
+#for sentiment, value in book_reviews_with_sentiments.items():
+    #if value == "positve":
+        #positive_reviews[sentiment] = value
+
+#for key, val in book_reviews_with_sentiments.items():
+    #if val == "positive":
+        #print("{} : {}".format(key, val))
+
+#positive_reviews = []
+
+#for dict in book_reviews_with_sentiments:
+    #for key, value in dict.items():
+        #if value == "positive":
+            #positive_reviews.append({
+        #"review": review,
+        #"sentiment": sentiment
+    #})
+
+#print(positive_reviews)
+
+#email_prompt = f"""
+#Generate an email using {book_summary} and {book_reviews_with_sentiments} data
+#"""
 # TODO: Make your API call and print() it so you can run your script and see the results — how does it look?
-email_messages = [
-        {"role": "system", "content": "You are a friendly Youtuber making earnest book recommendations"},
-        {"role": "user", "content": email_prompt}
-    ]
-marketing_email =  get_api_chat_response_message (model, email_messages)
+#email_messages = [
+        #{"role": "system", "content": "You are a friendly Youtuber making earnest book recommendations"},
+        #{"role": "user", "content": email_prompt}
+    #]
+#marketing_email =  get_api_chat_response_message (model, email_messages)
 # TODO: Adjust your prompt as needed to get the email content you want — remember, we want an exciting email that makes people want to run out and buy the book!
 # TODO: Did you ask for an email subject line? You could try asking for 10 different options for email subject lines and see what you get
 
@@ -144,4 +163,4 @@ marketing_email =  get_api_chat_response_message (model, email_messages)
 
 #print("\n" + book_summary + "\n")
 
-#print(book_reviews_with_sentiments)
+print(book_reviews_with_sentiments)
