@@ -119,32 +119,13 @@ for review in book_reviews:
 # TODO: Create a new prompt to ask the model to generate an email, using your book_summary and book_reviews_with_sentiments data
     # TODO: You’ll need to loop through book_reviews_with_sentiments to get just the positive reviews!
 
-#positive_reviews = book_reviews_with_sentiments.get("sentiment"["positive"])
+positive_reviews = []
 
-#for review in book_reviews_with_sentiments:
-    #if "sentiment"=="positive":
-        #positive_reviews.append(review)
-#print(positive_reviews)
+for review in book_reviews_with_sentiments:
+    if review["sentiment"]=="Positive":
+        positive_reviews.append(review)
 
-#for sentiment, value in book_reviews_with_sentiments.items():
-    #if value == "positve":
-        #positive_reviews[sentiment] = value
-
-#for key, val in book_reviews_with_sentiments.items():
-    #if val == "positive":
-        #print("{} : {}".format(key, val))
-
-#positive_reviews = []
-
-#for dict in book_reviews_with_sentiments:
-    #for key, value in dict.items():
-        #if value == "positive":
-            #positive_reviews.append({
-        #"review": review,
-        #"sentiment": sentiment
-    #})
-
-#print(positive_reviews)
+print(positive_reviews)
 
 #email_prompt = f"""
 #Generate an email using {book_summary} and {book_reviews_with_sentiments} data
@@ -163,4 +144,4 @@ for review in book_reviews:
 
 #print("\n" + book_summary + "\n")
 
-print(book_reviews_with_sentiments)
+#print(book_reviews_with_sentiments)
