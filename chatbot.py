@@ -125,19 +125,34 @@ for review in book_reviews_with_sentiments:
     if review["sentiment"]=="Positive":
         positive_reviews.append(review)
 
-print(positive_reviews)
+#print(positive_reviews)
 
-#email_prompt = f"""
-#Generate an email using {book_summary} and {book_reviews_with_sentiments} data
-#"""
+email_prompt = f"""
+Generate an email using {book_summary} and {positive_reviews} data
+"""
 # TODO: Make your API call and print() it so you can run your script and see the results — how does it look?
-#email_messages = [
-        #{"role": "system", "content": "You are a friendly Youtuber making earnest book recommendations"},
-        #{"role": "user", "content": email_prompt}
-    #]
+email_messages = [
+        {"role": "system", "content": "You are a friendly Youtuber making earnest book recommendations"},
+        {"role": "user", "content": email_prompt}
+    ]
+
 #marketing_email =  get_api_chat_response_message (model, email_messages)
+
+#print(marketing_email)
 # TODO: Adjust your prompt as needed to get the email content you want — remember, we want an exciting email that makes people want to run out and buy the book!
 # TODO: Did you ask for an email subject line? You could try asking for 10 different options for email subject lines and see what you get
+subject_line_prompt = f"""
+Generate 10 gripping options for the subject line of an email using {book_summary} and {positive_reviews} data
+"""
+# TODO: Make your API call and print() it so you can run your script and see the results — how does it look?
+subject_line_messages = [
+        {"role": "system", "content": "You are a friendly Youtuber making earnest book recommendations"},
+        {"role": "user", "content": subject_line_prompt}
+    ]
+
+subject_lines =  get_api_chat_response_message (model, subject_line_prompt)
+
+print(subject_lines)
 
 #if set_user_input_category(user_input) == "question":
     #response_for_user = "Good question! " + response_for_user
