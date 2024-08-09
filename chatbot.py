@@ -4,14 +4,6 @@ from openai import OpenAI
 # OpenAI() will automatically pull the key from the system variable
 client = OpenAI()
 
-#def set_user_input_category (user_input) :
-    #check if any text in input indicates there is a question
-    #question_keywords = ["who", "what", "when", "where", "why", "how", "?"]
-    #for keyword in question_keywords:
-        #if keyword in user_input.lower():
-            #return "question"
-    #return "statement"
-
 def get_api_chat_response_message (model, messages):
 
     # Chat Completions API, formatted as an object where model and
@@ -25,10 +17,6 @@ def get_api_chat_response_message (model, messages):
     response_content = response.choices[0].message.content
 
     return response_content
-
-# ask user to input text. This script is run via the command line 
-# for now so the input() function is required
-# user_input = input("\nAsk me something...\n\n")
 
 model = "gpt-3.5-turbo"
 
@@ -122,8 +110,6 @@ for review in book_reviews_with_sentiments:
     if review["sentiment"]=="Positive":
         positive_reviews.append(review)
 
-#print(positive_reviews)
-
 email_prompt = f"""
 Generate an email using {book_summary} and {positive_reviews} data
 """
@@ -133,8 +119,6 @@ email_messages = [
     ]
 
 marketing_email =  get_api_chat_response_message (model, email_messages)
-
-#print(marketing_email)
 
 # Ask for an email subject line
 subject_line_prompt = f"""
@@ -148,10 +132,9 @@ subject_line_messages = [
 
 subject_lines =  get_api_chat_response_message (model, subject_line_messages)
 
-print(subject_lines)
+#print(marketing_email)
 
-#if set_user_input_category(user_input) == "question":
-    #response_for_user = "Good question! " + response_for_user
+#print(subject_lines)
 
 #print("\n" + book_summary + "\n")
 
