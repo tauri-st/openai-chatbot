@@ -142,7 +142,7 @@ email_messages = [
 # TODO: Adjust your prompt as needed to get the email content you want — remember, we want an exciting email that makes people want to run out and buy the book!
 # TODO: Did you ask for an email subject line? You could try asking for 10 different options for email subject lines and see what you get
 subject_line_prompt = f"""
-Generate 10 gripping options for the subject line of an email using {book_summary} and {positive_reviews} data
+Generate 10 gripping options for the subject line of an email using {book_summary} and {positive_reviews} data, limited to 12 words each
 """
 # TODO: Make your API call and print() it so you can run your script and see the results — how does it look?
 subject_line_messages = [
@@ -150,7 +150,7 @@ subject_line_messages = [
         {"role": "user", "content": subject_line_prompt}
     ]
 
-subject_lines =  get_api_chat_response_message (model, subject_line_prompt)
+subject_lines =  get_api_chat_response_message (model, subject_line_messages)
 
 print(subject_lines)
 
